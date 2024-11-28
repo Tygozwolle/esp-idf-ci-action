@@ -37,7 +37,7 @@ runs:
         docker run -t \
         -e IDF_TARGET="${IDF_TARGET}" \
         -v "${GITHUB_WORKSPACE}:/${{ github.repository }}" \
-        -w "/app/${{ github.repository }}/${{ inputs.path }}" \
+        -w "/${{ github.repository }}/${{ inputs.path }}" \
         ${{ inputs.extra_docker_args }} \
         ${{ inputs.esp_idf_docker_image }}:${{ inputs.esp_idf_version }} \
         /bin/bash -c 'git config --global --add safe.directory "*" && ${{ inputs.command }}'
